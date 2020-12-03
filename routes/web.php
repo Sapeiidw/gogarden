@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlantController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,11 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
+
+// Route::prefix('plant')->group(function () {
+//     Route::get('/', [PlantController::class, 'index'])->name('plant.index');
+//     Route::get('{id}', [PlantController::class, 'show'])->name('plant.show');
+//     Route::delete('{id}/delete', [PlantController::class, 'destroy'])->name('plant.delete');
+// });
+
+Route::resource('plants', PlantController::class);

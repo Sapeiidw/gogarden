@@ -1,0 +1,6 @@
+GET http://localhost:8000/plants
+
+###
+GET http://localhost:8000/plants/3
+###
+DELETE http://localhost:8000/plants/4/delete 
