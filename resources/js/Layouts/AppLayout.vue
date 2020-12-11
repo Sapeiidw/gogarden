@@ -18,6 +18,12 @@
                                 Dashboard
                             </jet-nav-link>
                         </div>
+
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <jet-nav-link :href="route('plant')" :active="route().current('plant')">
+                                Plant
+                            </jet-nav-link>
+                        </div>
                     </div>
 
                     <!-- Settings Dropdown -->
@@ -122,7 +128,11 @@
                         Dashboard
                     </jet-responsive-nav-link>
                 </div>
-
+                <div class="pt-2 pb-3 space-y-1">
+                    <jet-responsive-nav-link :href="route('plant')" :active="route().current('plant')">
+                        Plants
+                    </jet-responsive-nav-link>
+                </div>
                 <!-- Responsive Settings Options -->
                 <div class="pt-4 pb-1 border-t border-gray-200">
                     <div class="flex items-center px-4">

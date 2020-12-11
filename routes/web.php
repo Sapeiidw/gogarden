@@ -22,10 +22,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
 
-// Route::prefix('plant')->group(function () {
-//     Route::get('/', [PlantController::class, 'index'])->name('plant.index');
-//     Route::get('{id}', [PlantController::class, 'show'])->name('plant.show');
-//     Route::delete('{id}/delete', [PlantController::class, 'destroy'])->name('plant.delete');
-// });
-
-Route::resource('plants', PlantController::class);
+Route::resource('plant', PlantController::class, [
+    'names' => [
+        'index' => 'plant',
+        'create' =>  'plant.create',
+        'store' =>  'plant.store',
+        // 'show' =>  'plant.show',
+        // 'edit' =>  'plant.edit',
+        'update' =>  'plant.update',
+        'destroy' =>  'plant.destroy',
+    ]
+])->middleware(['auth:sanctum', 'verified']);
